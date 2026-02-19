@@ -1,0 +1,327 @@
+/* Global Styles - Portfolio */
+:root {
+  --primary-black: #0f0f1e;
+  --primary-blue: #1e40af;
+  --neon-cyan: #00d9ff;
+  --neon-purple: #d946ef;
+  --neon-pink: #ec4899;
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --bg-dark: #0a0e27;
+  --bg-card: #1a1f3a;
+  --border-color: #334155;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: linear-gradient(135deg, var(--primary-black) 0%, var(--bg-dark) 50%, #1a1a3e 100%);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon-cyan), var(--neon-purple));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--neon-cyan), var(--neon-pink));
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+    filter: drop-shadow(0 0 5px var(--neon-cyan));
+  }
+  50% {
+    text-shadow: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+    filter: drop-shadow(0 0 10px var(--neon-cyan));
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px var(--neon-cyan), inset 0 0 15px rgba(0, 217, 255, 0.1);
+  }
+  50% {
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 25px var(--neon-purple), inset 0 0 15px rgba(217, 70, 239, 0.1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.neon-border {
+  border: 2px solid var(--neon-cyan);
+  border-radius: 8px;
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  color: var(--primary-black);
+  border: 2px solid var(--neon-cyan);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--neon-cyan);
+  border: 2px solid var(--neon-cyan);
+}
+
+.btn-outline:hover {
+  background: var(--neon-cyan);
+  color: var(--primary-black);
+  box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--neon-purple);
+  text-decoration: underline;
+}
+
+/* Focus Styles for Accessibility */
+*:focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--neon-cyan);
+  outline-offset: 2px;
+}
+
+@import 'tailwindcss';
+
+/* Default view transition animation – smooth cross-fade + slight scale */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.6s;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: fade 0.6s ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Optional: nicer morph for your profile photo & name */
+::view-transition-old(profile-photo),
+::view-transition-new(profile-photo) {
+  animation: morph-photo 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-old(person-name),
+::view-transition-new(person-name) {
+  animation: morph-name 0.7s ease;
+}
+
+@keyframes morph-photo {
+  from {
+    transform: scale(0.92) translateY(10px);
+    opacity: 0.7;
+    border-radius: 9999px;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    border-radius: 1rem;
+  }
+}
+
+@keyframes morph-name {
+  from {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* @keyframes neonGlow {
+  from {
+    text-shadow:
+      0 0 10px #06b6d4,
+      0 0 20px #06b6d4,
+      0 0 30px #06b6d4,
+      0 0 50px #06b6d4;
+  }
+  to {
+    text-shadow:
+      0 0 5px #06b6d4,
+      0 0 15px #06b6d4,
+      0 0 25px #06b6d4,
+      0 0 40px #06b6d4;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} */
