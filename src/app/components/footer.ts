@@ -50,7 +50,7 @@ import { CommonModule } from '@angular/common';
               >
                 LinkedIn
               </a>
-              <a href="mailto:abdalrahman.sobhy14@gmail.com" title="Email" aria-label="Email">
+              <a href="mailto:abdelrahman.msobhym@gmail.com" title="Email" aria-label="Email">
                 Email
               </a>
             </div>
