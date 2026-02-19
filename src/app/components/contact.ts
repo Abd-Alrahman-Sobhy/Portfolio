@@ -22,14 +22,14 @@ import { FormsModule } from '@angular/forms';
 
             <div class="contact-methods">
               <a
-                href="mailto:abdalrahman.sobhy14@gmail.com"
+                href="mailto:abdelrahman.msobhym@gmail.com"
                 class="contact-method hover-lift"
                 aria-label="Email me"
               >
                 <div class="method-icon">📧</div>
                 <div class="method-content">
                   <div class="method-label">Email</div>
-                  <div class="method-value">abdalrahman.sobhy14@gmail.com</div>
+                  <div class="method-value">abdelrahman.msobhym@gmail.com</div>
                 </div>
               </a>
 
@@ -130,7 +130,7 @@ import { FormsModule } from '@angular/forms';
 
               <div class="email-cta">
                 <a
-                  href="mailto:abdalrahman.sobhy14@gmail.com"
+                  href="mailto:abdelrahman.msobhym@gmail.com"
                   class="btn btn-primary"
                   aria-label="Send me an email"
                 >
